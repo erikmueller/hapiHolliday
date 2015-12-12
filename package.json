@@ -1,0 +1,26 @@
+{
+  "name": "hapi-holiday",
+  "version": "1.0.0",
+  "description": "hapiHolliday ============",
+  "main": "index.js",
+  "dependencies": {
+    "hapi": "11.1.2"
+  },
+  "devDependencies": {
+    "eslint": "1.10.3"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "./node_modules/.bin/eslint '*.js' '**/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://erikmueller@github.com/erikmueller/hapiHolliday.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikmueller/hapiHolliday/issues"
+  },
+  "homepage": "https://github.com/erikmueller/hapiHolliday#readme"
+}

@@ -1,16 +1,14 @@
 var Hapi = require('hapi'),
-	server = new Hapi.Server();
+    server = new Hapi.Server(),
+    port = 8080,
+    routes = require('./src/routes');
 
-server
-	.connection({port: 8000})
-	.route({
-		path: '/',
-		method:'GET',
-		handler: function (request, reply) {
-			reply(200);
-		}
-	})
+server.connection({port: port});
+
+for (const route in routes) {
+    server.route(routes[route]);
+}
 
 server.start(function () {
-	console.log('Server running at localhost:8000');
+    console.log(`Server running at localhost:${port}`); //eslint-disable-line no-console
 });
