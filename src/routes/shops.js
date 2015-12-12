@@ -1,4 +1,11 @@
+const ctrl = require('../controllers');
+
 module.exports = [
+    {
+        method: 'GET',
+        path: '/shops',
+        handler: ctrl.shops.list
+    },
     {
         method: 'GET',
         path: '/shops/{shopSlug}',
@@ -7,6 +14,6 @@ module.exports = [
     {
         method: 'POST',
         path: '/shops/{shopSlug}/create',
-        handler: (req, reply) => reply(`Created ${req.params.shopSlug}`)
+        handler: (req, reply) => reply(`Created shop '${req.params.shopSlug}'`)
     }
 ];
