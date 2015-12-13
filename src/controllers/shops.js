@@ -1,20 +1,11 @@
-const SHOPS = [
-    {
-        name: 'a',
-        content: 'pony'
-    },
-    {
-        name: 'b',
-        content: 'unicat'
-    },
-    {
-        name: 'c',
-        content: 'owlicorn'
-    }
-];
+'use strict';
 
-const list = (req, reply) => reply(SHOPS);
+const shopModel = require('../models/shop');
+
+const list = (req, reply) => reply(shopModel.list());
+const findOne = (req, reply) => reply(shopModel.findOne(req.params.shopSlug));
 
 module.exports = {
-    list
+    list,
+    findOne
 };

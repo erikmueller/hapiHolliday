@@ -1,19 +1,14 @@
-const ctrl = require('../controllers');
+const shopController = require('../controllers/shops');
 
 module.exports = [
     {
         method: 'GET',
         path: '/shops',
-        handler: ctrl.shops.list
+        handler: shopController.list
     },
     {
         method: 'GET',
         path: '/shops/{shopSlug}',
-        handler: (req, reply) => reply(req.params.shopSlug)
-    },
-    {
-        method: 'POST',
-        path: '/shops/{shopSlug}/create',
-        handler: (req, reply) => reply(`Created shop '${req.params.shopSlug}'`)
+        handler: shopController.findOne
     }
 ];
